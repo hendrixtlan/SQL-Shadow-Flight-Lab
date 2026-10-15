@@ -1,0 +1,27 @@
+# Copy this into ~/.dbt/profiles.yml or specify --profiles-dir; never commit credentials.
+# Fabric Warehouse only (NOT the read-only Lakehouse SQL analytics endpoint).
+medallion_x:
+  target: dev
+  outputs:
+    dev:
+      type: fabric
+      driver: 'ODBC Driver 18 for SQL Server'
+      server: "{{ env_var('FABRIC_SQL_SERVER') }}"
+      port: 1433
+      database: "{{ env_var('FABRIC_WAREHOUSE_NAME') }}"
+      schema: analytics_dev
+      threads: 4
+      authentication: CLI
+      encrypt: true
+      trust_cert: false
+    ci:
+      type: fabric
+      driver: 'ODBC Driver 18 for SQL Server'
+      server: "{{ env_var('FABRIC_SQL_SERVER') }}"
+      port: 1433
+      database: "{{ env_var('FABRIC_CANDIDATE_WAREHOUSE') }}"
+      schema: analytics_ci
+      threads: 4
+      authentication: environment
+      encrypt: true
+      trust_cert: false

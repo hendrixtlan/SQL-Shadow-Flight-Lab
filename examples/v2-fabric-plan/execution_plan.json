@@ -1,0 +1,32 @@
+{
+  "assumptions": [
+    "Execute baseline and candidate from separate Git worktrees/commits.",
+    "Profiles dev/ci Warehouse environment variables must match the chosen names.",
+    "Run-scoped freeze table must be immutable after CTAS; restrict mutation permissions.",
+    "Manifest/job evidence and actual T-SQL results must be collected before promotion.",
+    "Reference SQL not yet run against a live Fabric tenant."
+  ],
+  "baseline_warehouse": "baseline_wh",
+  "candidate_warehouse": "candidate_wh",
+  "dbt_commands": {
+    "baseline": "dbt build --target dev --vars '{\"source_database\":\"freeze_wh\",\"source_schema\":\"flight_lab01\",\"source_table\":\"raw_payment_events\"}'",
+    "candidate": "dbt build --target ci --vars '{\"source_database\":\"freeze_wh\",\"source_schema\":\"flight_lab01\",\"source_table\":\"raw_payment_events\"}'"
+  },
+  "dbt_executed": false,
+  "dbt_vars": {
+    "source_database": "freeze_wh",
+    "source_schema": "flight_lab01",
+    "source_table": "raw_payment_events"
+  },
+  "expected_gold_relations": [
+    "baseline_wh.analytics_dev_gold.mart_daily_payments",
+    "candidate_wh.analytics_ci_gold.mart_daily_payments"
+  ],
+  "fabric_executed": false,
+  "mode": "PLAN_ONLY_NOT_EXECUTED",
+  "production_promoted": false,
+  "run_id": "lab01",
+  "schema": "medallion-x.fabric-experiment-plan.v1",
+  "source_relation": "freeze_wh.flight_lab01.raw_payment_events",
+  "workspace_constraint": "The Bronze Lakehouse and all three Warehouses must be accessible within the same Fabric workspace."
+}

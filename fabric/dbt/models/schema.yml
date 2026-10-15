@@ -1,0 +1,32 @@
+version: 2
+models:
+  - name: stg_payment_events
+    description: "Parsed source events plus an explicit contract acceptance flag."
+    columns:
+      - name: event_id
+        data_tests: [not_null]
+      - name: transaction_id
+        data_tests: [not_null]
+  - name: silver_payment_events
+    description: "One valid row per event ID."
+    columns:
+      - name: event_id
+        data_tests: [not_null, unique]
+      - name: transaction_id
+        data_tests: [not_null]
+      - name: amount_cents
+        data_tests: [not_null]
+  - name: fct_payment_current
+    description: "Current state per transaction by event time."
+    columns:
+      - name: transaction_id
+        data_tests: [not_null, unique]
+      - name: event_id
+        data_tests: [not_null]
+  - name: mart_daily_payments
+    description: "Current-state financial exposure grouped by latest business event date; not a payment ledger."
+    columns:
+      - name: latest_event_date
+        data_tests: [not_null]
+      - name: currency
+        data_tests: [not_null]

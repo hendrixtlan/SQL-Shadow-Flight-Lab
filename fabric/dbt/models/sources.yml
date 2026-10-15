@@ -1,0 +1,17 @@
+version: 2
+sources:
+  - name: bronze
+    description: "Append-only Delta Bronze table in a Fabric schema-enabled Lakehouse; same workspace as target Warehouse."
+    database: "{{ var('source_database', env_var('FABRIC_BRONZE_LAKEHOUSE', 'bronze_lh')) }}"
+    schema: "{{ var('source_schema', 'dbo') }}"
+    tables:
+      - name: raw_payment_events
+        identifier: "{{ var('source_table', 'raw_payment_events') }}"
+        description: "CDC events from synthetic input CSV; duplicated event IDs are intentionally possible."
+        columns:
+          - name: event_id
+            data_tests:
+              - not_null
+          - name: transaction_id
+            data_tests:
+              - not_null

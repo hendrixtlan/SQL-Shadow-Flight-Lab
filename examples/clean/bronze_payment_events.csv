@@ -1,0 +1,14 @@
+event_id,transaction_id,event_at,ingested_at,status,amount_cents,gross_amount_cents,currency,payload_schema_version,customer_id
+e01,tx-001,2026-10-01T08:00:00Z,2026-10-01T08:00:00Z,authorized,10000,,MXN,1,synthetic-tx-001
+e02,tx-001,2026-10-01T08:02:00Z,2026-10-01T08:02:00Z,settled,10000,,MXN,1,synthetic-tx-001
+e03,tx-002,2026-10-01T08:03:00Z,2026-10-01T08:03:00Z,settled,17500,,MXN,1,synthetic-tx-002
+e04,tx-003,2026-10-01T08:04:00Z,2026-10-01T08:04:00Z,authorized,20000,,MXN,1,synthetic-tx-003
+e05,tx-003,2026-10-01T08:08:00Z,2026-10-01T08:08:00Z,chargeback,20000,,MXN,1,synthetic-tx-003
+e02,tx-001,2026-10-01T08:02:00Z,2026-10-01T08:02:00Z,settled,10000,,MXN,1,synthetic-tx-001
+e06,tx-004,2026-10-01T08:06:00Z,2026-10-01T08:06:00Z,authorized,5000,,MXN,1,synthetic-tx-004
+e07,tx-005,2026-10-01T08:07:00Z,2026-10-01T08:07:00Z,settled,,12000,MXN,2,synthetic-tx-005
+e08,tx-006,2026-10-01T08:09:00Z,2026-10-01T08:09:00Z,settled,5000,,MXN,1,synthetic-tx-006
+e09,tx-006,2026-10-01T08:11:00Z,2026-10-01T08:11:00Z,refunded,5000,,MXN,1,synthetic-tx-006
+e10,tx-007,2026-10-01T08:13:00Z,2026-10-01T08:13:00Z,refunded,30000,,MXN,1,synthetic-tx-007
+e11,tx-007,2026-10-01T08:10:00Z,2026-10-01T08:20:00Z,settled,30000,,MXN,1,synthetic-tx-007
+e12,tx-008,2026-10-01T08:14:00Z,2026-10-01T08:14:00Z,authorized,11000,,MXN,1,synthetic-tx-008

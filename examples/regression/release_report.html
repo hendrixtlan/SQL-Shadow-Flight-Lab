@@ -1,0 +1,13 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Medallion X - BLOCKED</title>
+<style>body{font-family:system-ui,sans-serif;max-width:980px;margin:40px auto;padding:0 20px;color:#182034;background:#fafbfc}
+header{padding:25px;background:#152340;color:white;border-radius:13px}h1{margin:0}.panel{border:1px solid #dbe2ec;border-radius:12px;padding:22px;background:white;margin-top:18px}
+table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:12px;border-bottom:1px solid #e5e9f0}th{background:#f3f6fa}.blocked{color:#bd2434}.eligible{color:#047857}
+code{overflow-wrap:anywhere}li{margin:7px 0}</style>
+<header><h1>MEDALLION X | Release Flight Recorder</h1><p>Candidate vs baseline on identical synthetic CDC input</p></header>
+<div class="panel"><h2 class="blocked">BLOCKED</h2><p>No production publication was performed. Human approval is required.</p><p>Snapshot: <code>d2121fc8f4549c0c04985176220d6cc8f16554f30e7ef6ba5f1e5488e27ad5c9</code></p></div>
+<div class="panel"><h2>Metric parity</h2><table><thead><tr><th>Metric</th><th>Baseline</th><th>Candidate</th><th>Delta</th></tr></thead><tbody><tr><td>current_settled_amount_cents</td><td>39500</td><td>55500</td><td>16000</td></tr><tr><td>currently_settled_transactions</td><td>3</td><td>5</td><td>2</td></tr><tr><td>authorized_exposure_cents</td><td>16000</td><td>16000</td><td>0</td></tr></tbody></table></div>
+<div class="panel"><h2>Policy findings</h2><ul><li>metric_drift:current_settled_amount_cents</li><li>metric_drift:currently_settled_transactions</li></ul><p>Changed transaction IDs: 0</p></div>
+<div class="panel"><h2>Downstream impact</h2><p>Lineage provenance: declared_fallback_graph</p><ul><li>model.medallion_x.stg_payment_events</li><li>model.medallion_x.silver_payment_events</li><li>model.medallion_x.fct_payment_current</li><li>model.medallion_x.mart_daily_payments</li><li>consumer.powerbi.payment_exposure</li></ul></div>
+<div class="panel"><h2>Run limitations</h2><ul><li>Reference Python evaluator; Fabric/dbt SQL parity has not been validated in this run.</li><li>A local release pointer is not a Power BI or Fabric deployment.</li><li>A production comparison must pin source Delta table versions or a consistent source snapshot.</li></ul></div>
+</html>

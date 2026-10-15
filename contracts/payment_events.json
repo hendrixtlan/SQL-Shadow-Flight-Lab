@@ -1,0 +1,14 @@
+{
+  "name": "payment-events",
+  "owner": "payments-data-platform",
+  "description": "Only explicitly reviewed schema revisions may flow into Silver.",
+  "accepted_versions": {
+    "1": {"amount_field": "amount_cents"},
+    "2": {"amount_field": "gross_amount_cents"}
+  },
+  "status_enum": ["authorized", "settled", "refunded", "chargeback"],
+  "currency": "MXN",
+  "event_identity": "event_id",
+  "state_order": ["event_at", "ingested_at", "event_id"],
+  "breaking_change_policy": "block_unreviewed"
+}

@@ -1,0 +1,42 @@
+{
+  "artifacts": {
+    "baseline.sqlite": {
+      "bytes": 20480,
+      "sha256": "ba824fdac459b0bbeb539b1ca9aec783bd03ae84feeb593e6b010680af772958"
+    },
+    "candidate.sqlite": {
+      "bytes": 20480,
+      "sha256": "ba824fdac459b0bbeb539b1ca9aec783bd03ae84feeb593e6b010680af772958"
+    },
+    "frozen_bronze.csv": {
+      "bytes": 1432,
+      "sha256": "02b86251c065bdcacb645b8ee85cbefd68da473da7522d554632b1111fe10fdd"
+    },
+    "inputs/baseline.sql": {
+      "bytes": 1020,
+      "sha256": "04fa419e66d8b8be79afd97138f994098d08a1ceee354b0bdc6312e01fdbf893"
+    },
+    "inputs/candidate.sql": {
+      "bytes": 1020,
+      "sha256": "04fa419e66d8b8be79afd97138f994098d08a1ceee354b0bdc6312e01fdbf893"
+    },
+    "inputs/impact_graph.json": {
+      "bytes": 438,
+      "sha256": "78e557379b8f07780db7ee90e789d95770586db5a8113c264ff153a6ea76141b"
+    },
+    "inputs/release_policy.json": {
+      "bytes": 186,
+      "sha256": "38fa9942cf513d9de6e29c5fbefdcfcfeb97349ac88977229a5bf933eb0ee380"
+    },
+    "release_evidence.json": {
+      "bytes": 3360,
+      "sha256": "5277610e3f87d89e8c12daa8ae65cc6e229c97a55f2634fa56f53375251d5695"
+    },
+    "release_report.html": {
+      "bytes": 2738,
+      "sha256": "add6c337319b8b9c29c11e9947be718100adef4104506012fabd0bff8a9bd268"
+    }
+  },
+  "schema": "medallion-x.integrity-ledger.v1",
+  "scope": "local integrity check, UNSIGNED; no proof of identity or independent trust"
+}

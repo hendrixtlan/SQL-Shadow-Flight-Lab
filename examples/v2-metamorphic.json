@@ -1,0 +1,13 @@
+{
+  "engine": "SQLite local SQL and normalized contract source",
+  "fabric_executed": false,
+  "failures": [],
+  "invariants": [
+    "permutation_invariant_business_state",
+    "idempotent_exact_duplicate_deliveries"
+  ],
+  "passed": true,
+  "rounds": 100,
+  "schema": "medallion-x.metamorphic-test.v1",
+  "seed": 42
+}

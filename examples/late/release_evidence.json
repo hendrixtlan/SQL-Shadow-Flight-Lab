@@ -1,0 +1,78 @@
+{
+  "baseline": {
+    "accepted_count": 13,
+    "duplicate_count": 1,
+    "metrics": {
+      "authorized_exposure_cents": 16000,
+      "current_settled_amount_cents": 22000,
+      "currently_settled_transactions": 2
+    },
+    "model_version": "stable",
+    "quarantine": [],
+    "state_counts": {
+      "authorized": 2,
+      "chargeback": 1,
+      "refunded": 3,
+      "settled": 2
+    },
+    "state_hash": "edf2b180d7941c20d1914680fda58df56f8940dc6d32c4f5304314e2379506d2"
+  },
+  "candidate": {
+    "accepted_count": 13,
+    "duplicate_count": 1,
+    "metrics": {
+      "authorized_exposure_cents": 16000,
+      "current_settled_amount_cents": 22000,
+      "currently_settled_transactions": 2
+    },
+    "model_version": "stable",
+    "quarantine": [],
+    "state_counts": {
+      "authorized": 2,
+      "chargeback": 1,
+      "refunded": 3,
+      "settled": 2
+    },
+    "state_hash": "edf2b180d7941c20d1914680fda58df56f8940dc6d32c4f5304314e2379506d2"
+  },
+  "changed_transaction_ids": [],
+  "gate": {
+    "decision": "ELIGIBLE_FOR_APPROVAL",
+    "human_approval_required": true,
+    "production_promoted": false,
+    "reasons": []
+  },
+  "impact": {
+    "affected_nodes": [
+      "model.medallion_x.stg_payment_events",
+      "model.medallion_x.silver_payment_events",
+      "model.medallion_x.fct_payment_current",
+      "model.medallion_x.mart_daily_payments",
+      "consumer.powerbi.payment_exposure"
+    ],
+    "changed_node": "source.medallion_x.bronze.raw_payment_events",
+    "graph_provenance": "declared_fallback_graph"
+  },
+  "limitations": [
+    "Reference Python evaluator; Fabric/dbt SQL parity has not been validated in this run.",
+    "A local release pointer is not a Power BI or Fabric deployment.",
+    "A production comparison must pin source Delta table versions or a consistent source snapshot."
+  ],
+  "metric_deltas": {
+    "authorized_exposure_cents": 0,
+    "current_settled_amount_cents": 0,
+    "currently_settled_transactions": 0
+  },
+  "policy": {
+    "currency": "MXN",
+    "max_metric_delta_cents": 0,
+    "max_metric_delta_transactions": 0,
+    "max_quarantined_rows": 0,
+    "max_state_differences": 0,
+    "require_human_approval": true
+  },
+  "project": "Medallion X",
+  "scenario": "late",
+  "source_event_rows": 14,
+  "source_snapshot_sha256": "e87a59920a953b52441d4523e956a389bee1b1ae0c16c9d091bd4df37a5ad12a"
+}

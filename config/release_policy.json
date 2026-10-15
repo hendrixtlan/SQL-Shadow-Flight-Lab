@@ -1,0 +1,8 @@
+{
+  "max_quarantined_rows": 0,
+  "max_state_differences": 0,
+  "max_metric_delta_cents": 0,
+  "max_metric_delta_transactions": 0,
+  "require_human_approval": true,
+  "currency": "MXN"
+}

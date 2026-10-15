@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "medallion-x-lab"
+version = "0.2.0"
+description = "Dual-execution SQL safety lab for governed Microsoft Fabric + dbt medallion architectures"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+medallion-x = "medallion_x.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
